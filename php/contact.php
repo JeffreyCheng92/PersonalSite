@@ -44,6 +44,7 @@
 
 	if ($error == ""){
 		$sendgrid->send($mail);
+		echo "SEND";
 		// sending email
 		// $sent = mail($to_email,$subject,$message,$headers);
 		//
