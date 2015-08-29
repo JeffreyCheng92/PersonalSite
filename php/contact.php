@@ -2,16 +2,6 @@
 	require('email_config.php');
 	require("../vendor/sendgrid/sendgrid/lib/SendGrid.php");
 
-	// $sendgrid = new SendGrid('username', 'password');
-	// $email = new SendGridEmail();
-	// $email->addTo('foo@bar.com')->
-	// addTo('bar@foo.com')->
-	// setFrom('me@bar.com')->
-	// setSubject('Subject goes here')->
-	// setText('Hello World!')->
-	// setHtml('Hello World!');
-	// $sendgrid->send($email);
-
 	// sender information
 	$name = trim($_POST['name']);
 	$email = trim($_POST['email']);
@@ -33,22 +23,32 @@
 		$error = $invalid_name; // for empty name field
 	}
 
-    // email header
+	// email header
+
+	$sendgrid = new SendGrid('jeffreycheng92', 'j12164173J');
+	$mail = new SendGrid\Email();
+	$mail->addTo($to_email)
+				// ->addTo('bar@foo.com')
+				->setFrom($email)
+				->setSubject($subject)
+				->setText($message)
+				->setHtml($message);
+
 
 	$headers = "From: ".$name." <".$email.">\r\nReply-To: ".$email."";
 
 	if (!$error){
-
+		$sendgrid->send($mail);
 		// sending email
-		$sent = mail($to_email,$subject,$message,$headers);
-
-		if ($sent) {
-				// if message sent successfully
-				echo "SEND";
-			} else {
-				// error message
-				echo $sending_error;
-			}
+		// $sent = mail($to_email,$subject,$message,$headers);
+		//
+		// if ($sent) {
+		// 		// if message sent successfully
+		// 		echo "SEND";
+		// 	} else {
+		// 		// error message
+		// 		echo $sending_error;
+		// 	}
 	} else {
 		echo $error; // error message
 	}
