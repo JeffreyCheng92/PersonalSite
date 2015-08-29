@@ -1,8 +1,9 @@
 <?php
 	require('email_config.php');
-	require("../vendor/sendgrid/sendgrid/lib/SendGrid.php");
-	require("../vendor/sendgrid/sendgrid/lib/SendGrid/Email.php");
-	SendGrid::register_autoloader();
+	require_once("../vendor/sendgrid/sendgrid/lib/SendGrid.php");
+	require_once("../vendor/sendgrid/sendgrid/lib/SendGrid/Email.php");
+	require_once("../vendor/mashape/unirest-php/lib/Unirest.php");
+	require_once("../vendor/sendgrid/smtpapi/lib/Smtpapi.php");
 
 	// sender information
 	$name = trim($_POST['name']);
