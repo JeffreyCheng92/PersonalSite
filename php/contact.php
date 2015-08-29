@@ -3,7 +3,6 @@
 	require_once("../vendor/sendgrid/sendgrid/lib/SendGrid.php");
 	require_once("../vendor/sendgrid/smtpapi/lib/Smtpapi.php");
 	require_once("../vendor/sendgrid/smtpapi/lib/Smtpapi/Header.php");
-	require_once("../vendor/mashape/unirest-php/lib/Unirest/Unirest.php");
 	require_once("../vendor/mashape/unirest-php/lib/Unirest.php");
 	require_once("../vendor/sendgrid/sendgrid/lib/SendGrid/Email.php");
 
