@@ -1,13 +1,23 @@
-<?php 
+<?php
 	require('email_config.php');
-	
+	require("../vendor/sendgrid/sendgrid/lib/SendGrid.php");
+
+	// $sendgrid = new SendGrid('username', 'password');
+	// $email = new SendGridEmail();
+	// $email->addTo('foo@bar.com')->
+	// addTo('bar@foo.com')->
+	// setFrom('me@bar.com')->
+	// setSubject('Subject goes here')->
+	// setText('Hello World!')->
+	// setHtml('Hello World!');
+	// $sendgrid->send($email);
 
 	// sender information
 	$name = trim($_POST['name']);
 	$email = trim($_POST['email']);
 	$message = trim($_POST['message']);
 	$error = "";
-	
+
 	// check sender information
 	$pattern = "^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$^";
 	if(!preg_match_all($pattern, $email, $out)) {
@@ -15,7 +25,7 @@
 	}
 	if(!$email) {
 		$error = $invalid_email; // for empty email field
-	}	
+	}
 	if(!$message) {
 		$error = $invalid_message; // for empty message field
 	}
@@ -28,16 +38,16 @@
 	$headers = "From: ".$name." <".$email.">\r\nReply-To: ".$email."";
 
 	if (!$error){
-		
+
 		// sending email
-		$sent = mail($to_email,$subject,$message,$headers); 
-		
+		$sent = mail($to_email,$subject,$message,$headers);
+
 		if ($sent) {
 				// if message sent successfully
-				echo "SEND"; 
+				echo "SEND";
 			} else {
 				// error message
-				echo $sending_error; 
+				echo $sending_error;
 			}
 	} else {
 		echo $error; // error message
