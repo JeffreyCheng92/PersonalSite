@@ -1,11 +1,11 @@
 <?php
-	
+
 	//your email here
-	$to_email = 'mail@example.com';
-	
+	$to_email = 'jeffreycheng92@gmail.com';
+
 	//subject of email you will receive
-	$subject = 'Contact from your website';	
-	
+	$subject = 'Contact from jeffreys.info';
+
 	//Error Messages
 	$invalid_name = 'Please enter your name.';
 	$invalid_email = 'Please enter valid e-mail.';
