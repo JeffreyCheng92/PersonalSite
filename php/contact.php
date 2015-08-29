@@ -2,6 +2,7 @@
 	require('email_config.php');
 	require("../vendor/sendgrid/sendgrid/lib/SendGrid.php");
 	require("../vendor/sendgrid/sendgrid/lib/SendGrid/Email.php");
+	SendGrid::register_autoloader();
 
 	// sender information
 	$name = trim($_POST['name']);
