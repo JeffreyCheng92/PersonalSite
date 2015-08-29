@@ -1,6 +1,7 @@
 <?php
 	require('email_config.php');
 	require("../vendor/sendgrid/sendgrid/lib/SendGrid.php");
+	require("../vendor/sendgrid/sendgrid/lib/SendGrid/Email.php");
 
 	// sender information
 	$name = trim($_POST['name']);
@@ -25,7 +26,7 @@
 
 	// email header
 
-	$sendgrid = new SendGrid('jeffreycheng92', 'j12164173J');
+	$sendgrid = new SendGrid($username, $password);
 	$mail = new SendGrid\Email();
 	$mail->addTo($to_email)
 				// ->addTo('bar@foo.com')
