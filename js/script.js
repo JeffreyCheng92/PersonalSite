@@ -132,6 +132,8 @@ $(document).ready(function () {
 
     $('.menu div.contact-btn').on('click', function () {
         $('.contact-page').fadeIn(1200);
+        $('.error').fadeOut();
+        $('.success').fadeOut();
     });
 
     // Close Button, Hide Menu
