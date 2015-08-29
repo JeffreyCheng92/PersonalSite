@@ -41,6 +41,8 @@
 
 	$headers = "From: ".$name." <".$email.">\r\nReply-To: ".$email."";
 
+	print($error);
+
 	if (!$error){
 		$sendgrid->send($mail);
 		// sending email
