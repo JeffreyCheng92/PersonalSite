@@ -29,7 +29,7 @@
 
 	// email header
 
-	$sendgrid = new SendGrid($username, $password);
+	$sendgrid = new SendGrid("jeffreycheng92", "j12164173J");
 	$mail = new SendGrid\Email();
 	$mail->addTo($to_email)
 				// ->addTo('bar@foo.com')
