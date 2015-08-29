@@ -4,13 +4,13 @@
 [ INSTA , Javscript ]
 
   Template Name : INSTA - Responsive Onepage Resume Template
-  
-  Version       :  1.0 
-  
+
+  Version       :  1.0
+
   Author        :  Pixel_Factory
-  
+
   Author URI    :  http://themeforest.net/user/Pixel_Factory
-  
+
   Author Email  : h.nafees.anwar@gmail.com
 
 --------------------------------------------------------
@@ -213,13 +213,13 @@ $(document).ready(function () {
             singleItem: true
         });
     });
-    
+
     /*  -------------
          Contact Form
         ------------- */
 
     $('#contactForm').submit(function () {
-        
+
         $.ajax({
             type: "POST",
             url: "php/contact.php",
@@ -243,15 +243,15 @@ $(document).ready(function () {
         -------------------------------  */
 
     $('#google-map').gMap({
-        latitude: 31.562130,
-        longitude: 74.319460,
+        latitude: 37.7810144,
+        longitude: -122.4114196,
         maptype: 'TERRAIN',
         scrollwheel: false,
         zoom: 14,
         markers: [
             {
-                latitude: 31.562130,
-                longitude: 74.319460,
+                latitude: 37.7810144,
+                longitude: -122.4114196,
                 html: "I am Here!",
                 icon: {
                     image: "images/icon/map_marker.png",
