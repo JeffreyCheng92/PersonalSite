@@ -28,19 +28,20 @@
 	}
 
 	// email header
-	$from_email = "From: ".$name." <".$email.">\r\nReply-To: ".$email."";
+	// $from_email = "From: ".$name." <".$email.">\r\nReply-To: ".$email."";
 
 	$sendgrid = new SendGrid(getenv('SENDGRID_USERNAME'),
 													 getenv('SENDGRID_PASSWORD'));
 	$mail = new SendGrid\Email();
 	$mail->addTo($to_email)
 				// ->addTo('bar@foo.com')
-				->setFrom($from_email)
+				// ->setFrom(array('some@address.tld' => 'The Name'));
+				->setFromName($name)
+				->setFrom($email)
+				->setReplyTo($email)
 				->setSubject($subject)
 				->setText($message)
 				->setHtml($message);
-
-
 
 	if ($error == ""){
 		$sendgrid->send($mail);
