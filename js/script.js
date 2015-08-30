@@ -149,6 +149,18 @@ $(document).ready(function () {
     });
 
     /*  ----------------------------------------
+                     Profile Page
+        ----------------------------------------  */
+
+    $('.hire-me').on('click', function(event) {
+      event.preventDefault();
+
+      $('.contact-page').fadeIn(1200);
+      $('.error').fadeOut();
+      $('.success').fadeOut();
+    });
+
+    /*  ----------------------------------------
          Tooltip Starter for Social Media Icons
         ----------------------------------------  */
 
