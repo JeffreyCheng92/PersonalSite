@@ -28,7 +28,7 @@
 	}
 
 	// email header
-	$headers = ".$name." <".$email.">\r\nReply-To: ".$email.";
+	$headers = "From: ".$name." <".$email.">\r\nReply-To: ".$email."";
 
 	$sendgrid = new SendGrid(getenv('SENDGRID_USERNAME'),
 													 getenv('SENDGRID_PASSWORD'));
